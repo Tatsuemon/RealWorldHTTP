@@ -28,7 +28,7 @@ func main() {
 	io.Copy(fileWriter, readFile)
 	writer.Close()
 
-	resp, err := http.Post("http://localhost:18888", writer.FormDataContentType(), &buffer)
+	resp, err := http.Post("http://localhost:18888", writer.FormDataContentType(), &buffer) // Content-Type: applicaiton/octet-stream
 	if err != nil {
 		// 送信失敗
 		panic(err)
